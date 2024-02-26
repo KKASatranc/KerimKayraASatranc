@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKA Satranç ve Rastgele Video</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+
+        nav ul li {
+            margin: 10px;
+        }
+
+        main {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bilgi-bölümü {
+            flex: 1;
+            padding: 0 10px;
+            text-align: justify;
+            color: white;
+        }
+
+        .video-sekmesi {
+            flex: 1;
+            padding: 0 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .video-bölümü {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .buton-bölümü {
+            margin-bottom: 20px;
+        }
+
+        .buton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buton:hover {
+            background-color: #0056b3;
+        }
+
+        .shorts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .shorts iframe {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img class="a" src="KKA Satranç.jpeg" width="200" height="200">
+        <h1 style="color: white;">KKA Satranç ve Rastgele Video</h1>
+    </header>
+
+    <!-- Menü -->
+    <nav>
+        <ul>
+            <li class="yazi"><a class="yazi" href="https://www.youtube.com/@kkasatranc">YouTube</a></li>
+            <li class="yazi"><a class="yazi" href="https://www.instagram.com/kkasatranc/">Instagram</a></li>
+            <li class="yazi"><a class="yazi" href="https://lichess.org/team/kka-satranc">Turnuvalar</a></li>
+            <li class="yazi"><a class="yazi" href="https://disboard.org/tr/server/1108679037573935115">Discord</a></li>
+        </ul>
+    </nav>
+
+    <!-- İçerik -->
+    <main>
+        <!-- Sol Video Sekmesi -->
+        <div class="video-sekmesi">
+            <h2 style="text-align: center; color: white;">Videolar</h2>
+            <div class="video-bölümü">
+                <div class="buton-bölümü">
+                    <button class="buton" onclick="randomVideoFromChannel()">Rastgele Video</button>
+                </div>
+                <div id="video-başlık"></div> <!-- Video başlığı için bir div ekledim -->
+                <div id="tüm-videolar" style="cursor: pointer; color: blue;">Tüm Videolar</div> <!-- Tüm Videolar başlığı -->
+                <iframe id="video-iframe" width="500" height="320" src="" title="Rastgele Video" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- Bilgi Sekmesi -->
+        <div class="bilgi-bölümü">
+            <section>
+                <h2 style="text-align: center;">Hoş Geldiniz!</h2>
+            </section>
+
+            <section>
+                <h2>KKA Satranç Kimdir?</h2>
+                <p>KKA Satranç, Youtube'da eğlenceli satranç içeriği üreten ve uzun anlatım videolarıyla satrancı
+                    öğretip anlatan bir kanal, Kimi zaman discord sunucumuzda kişisel olarak sizlerle ilgilenen bir
+                    kişi, kimi zamansa satranç gelişiminizi arttırmanız adına bir kitaptır. Kısaca KKA Satranç
+                    sizlerin satranç deneyimini geliştirmek adına birçok adıma başvuran bir kişi ve kişilerdir.</p>
+            </section>
+
+            <section>
+                <h2>Kitaplar</h2>
+                <a href="https://mega.nz/file/3uAUCCpY#B1al5vOsQo4T7n_xRt-BHtvHVNqQWVf-LgK-x2G32VU">KKA Satranç Rehberi
+                    1. Kitap</a>
+            </section>
+
+            <section>
+                <h2>Sunucumuzla Alakalı</h2>
+                <p>KKA Satranç Discord Sunucusu, satranç etkinlikleri sunan hep beraber eğlenerek öğrendiğimiz bir
+                    satranç sunucusudur. Kendinizi satrançta geliştirebilir, farklı seviyelerde rakiplerle oynayabilir
+                    ve birinci sınıf satranç deneyimi yaşayabilirsiniz ve kaliteli bir sohbet ortamına dahil
+                    olabilirsiniz.</p>
+            </section>
+            <section>
+                <h2>İletişim</h2>
+                <p>kerimcompany@gmail.com</p>
+            </section>
+        </div>
+
+        <!-- Sağ Video Sekmesi (Shorts) -->
+        <div class="video-sekmesi shorts">
+            <h2 style="text-align: center; color: white;">Shorts</h2>
+            <div class="video-bölümü">
+                <iframe id="shorts-iframe" width="319" height="566" src="" title="Rastgele Shorts Video" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p style="text-align: center; color: white;">Telif Hakkı &copy; 2023 KKA Satranç. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        function randomVideoFromChannel() {
+            // Video seçimi için kullanılacak iframe ve video başlığı elementlerini alın
+            const iframe = document.getElementById("video-iframe");
+            const videoBaslik = document.getElementById("video-başlık");
+
+            // Rastgele bir video seçmek için API çağrısı yapın
+            fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8mY2VHihE1fAV7w3UxdBaw&type=video&key=YOUR_API_KEY")
+                .then(response => response.json())
+                .then(data => {
+                    const videos = data.items;
+                    const randomIndex = Math.floor(Math.random() * videos.length);
+                    const videoId = videos[randomIndex].id.videoId;
+                    const videoTitle = videos[randomIndex].snippet.title;
+
+                    // Seçilen videoyu iframe'e yükleyin
+                    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                    videoBaslik.innerHTML = videoTitle;
+                })
+                .catch(error => {
+                    console.error("Video alınamadı:", error);
+                });
+        }
+
+        function randomShortsVideo() {
+            // Shorts video seçimi için kullanılacak iframe elementini alın
+            const shortsIframe = document.getElementById("shorts-iframe");
+
+            // Rastgele bir shorts video seçmek için array oluşturun
+            const shortsVideos = [
+                "https://www.youtube.com/embed/Q4JTJtXlVa4",
+                "https://www.youtube.com/embed/xynFM0hQa4M",
+                "https://www.youtube.com/embed/X-CtLdtKcq4",
+                "https://www.youtube.com/embed/AhUh5KMHsII",
+                "https://www.youtube.com/embed/Zu49QtenIpc",
+                "https://www.youtube.com/embed/MPLls6rAW94",
+                "https://www.youtube.com/embed/mFaxit6fnlY",
+                "https://www.youtube.com/embed/Pj5SILb4Aq0",
+                "https://www.youtube.com/embed/VG2JYLkOcHY",
+                "https://www.youtube.com/embed/B60dIBuC_sI"
+            ];
+
+            // Rastgele bir shorts video seçin
+            const randomIndex = Math.floor(Math.random() * shortsVideos.length);
+            const randomShortsVideoUrl = shortsVideos[randomIndex];
+
+            // Seçilen videoyu iframe'e yükleyin
+            shortsIframe.src = randomShortsVideoUrl;
+        }
+    </script>
+</body>
+
+</html>
